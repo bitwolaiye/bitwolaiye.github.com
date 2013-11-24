@@ -4,7 +4,7 @@
   <title><![CDATA[ZhouQi's Blog]]></title>
   <link href="http://bitwolaiye.github.io/atom.xml" rel="self"/>
   <link href="http://bitwolaiye.github.io/"/>
-  <updated>2013-11-23T18:24:32+08:00</updated>
+  <updated>2013-11-24T13:37:14+08:00</updated>
   <id>http://bitwolaiye.github.io/</id>
   <author>
     <name><![CDATA[周琪(zhouqi)]]></name>
@@ -12,14 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Title]]></title>
-    <link href="http://bitwolaiye.github.io/blog/2013/11/23/title/"/>
-    <updated>2013-11-23T18:13:33+08:00</updated>
-    <id>http://bitwolaiye.github.io/blog/2013/11/23/title</id>
-    <content type="html"><![CDATA[<p>哈哈哈</p>
-]]></content>
-  </entry>
   
 </feed>
