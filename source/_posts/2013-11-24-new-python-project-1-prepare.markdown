@@ -13,6 +13,10 @@ categories:
 
 ### pip
 
+Mac下我用的包管理是brew，Ubuntu自带的包管理是apt-get。
+
+pip是python下的包管理，如何装？
+
 ### virtualenv
 为什么需要virtualenv？
 
@@ -39,4 +43,21 @@ categories:
 
 virtualenvwrapper是一个对虚拟环境的一个包装工具。
 
+### django
+之前我用的是django1.3后来升级到1.4，新装的环境看到已经是1.6了，也就是这个项目将在django1.6的技术上继续
 
+	$ pip install django
+
+### djangorestframework
+djangorestframework是我找到的一个在django的基础上提供restful api的框架。版本2.3.9。
+
+	$ pip install djangorestframework
+	
+### github
+我在github上建立了一个开源项目https://github.com/bitwolaiye/django_rest_api_sample 用于存储代码。
+
+将项目clone到本地
+
+	$ cd env1
+	$ git clone https://github.com/bitwolaiye/django_rest_api_sample.git
+	

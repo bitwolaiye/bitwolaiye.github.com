@@ -1,5 +1,5 @@
 from __future__ import with_statement
-from fabric.api import run, local
+from fabric.api import local
 
 __author__ = 'zhouqi'
 
