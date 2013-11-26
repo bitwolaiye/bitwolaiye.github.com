@@ -4,7 +4,7 @@
   <title><![CDATA[ZhouQi's Blog]]></title>
   <link href="http://bitwolaiye.github.io/atom.xml" rel="self"/>
   <link href="http://bitwolaiye.github.io/"/>
-  <updated>2013-11-25T14:24:01+08:00</updated>
+  <updated>2013-11-26T21:49:33+08:00</updated>
   <id>http://bitwolaiye.github.io/</id>
   <author>
     <name><![CDATA[周琪(zhouqi)]]></name>
@@ -12,6 +12,112 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[新python项目--1.准备工作]]></title>
+    <link href="http://bitwolaiye.github.io/blog/2013/11/24/new-python-project-1-prepare/"/>
+    <updated>2013-11-24T18:13:09+08:00</updated>
+    <id>http://bitwolaiye.github.io/blog/2013/11/24/new-python-project-1-prepare</id>
+    <content type="html"><![CDATA[<h2>python环境</h2>
+
+<p>我的工作机是Mac.而目标服务器应该大都是Ubuntu或者centOS，这2者我更倾向于Ubuntu，所以我将把Mac和Ubuntu下的步骤记录下来。</p>
+
+<h3>pip</h3>
+
+<p>Mac下我用的包管理是brew，Ubuntu自带的包管理是apt-get。</p>
+
+<p>pip是python下的包管理，pip如何装请自行google或者bing？</p>
+
+<h3>virtualenv</h3>
+
+<p>为什么需要virtualenv？</p>
+
+<p>其实之前我一直没有用，但这次可能要用的一些类库的版本可能和现在已有的项目不大一样，所以试试吧。</p>
+
+<p>安装virtualenv及创建一个虚拟环境命令如下：（pyCharm似乎自带这个功能，我没用过，同时需要在pyCharm中简单配置下才可以支持虚拟环境）</p>
+
+<pre><code>$ sudo pip install virtualenv virtualenvwrapper
+$ export WORKON_HOME=~/work/python_project
+$ mkdir -p $WORKON_HOME
+$ source /usr/local/bin/virtualenvwrapper.sh
+$ mkvirtualenv env1
+</code></pre>
+
+<p>需要退出虚拟环境时</p>
+
+<pre><code>$ deactivate
+</code></pre>
+
+<p>需要进入虚拟环境时</p>
+
+<pre><code>$ cd ~/work/python_project/env1
+$ ./bin/activate
+</code></pre>
+
+<p>相关参考：</p>
+
+<ul>
+<li><a href="https://pypi.python.org/pypi/virtualenv">virtualenv</a></li>
+<li><a href="http://virtualenvwrapper.readthedocs.org/en/latest/">virtualenvwrapper</a>是一个对虚拟环境的一个包装工具。</li>
+</ul>
+
+
+<h3>django</h3>
+
+<p>之前我用的是django1.3后来升级到1.4，新装的环境一看已经是1.6了，所以这个项目将在django1.6的基础上继续</p>
+
+<pre><code>$ pip install django
+</code></pre>
+
+<h3>djangorestframework</h3>
+
+<p>djangorestframework是我找到的一个在django的基础上提供restful api的框架。版本2.3.9。</p>
+
+<pre><code>$ pip install djangorestframework
+</code></pre>
+
+<h2>DB</h2>
+
+<p>db选择MySQL，此处不再详述安装等过程。关键是这块环境我是已有的，懒得再捣腾，你懂的。</p>
+
+<h2>版本库</h2>
+
+<p>我在github上建立了一个开源项目<a href="https://github.com/bitwolaiye/django_rest_api_sample">django_rest_api_sample</a> 用于存储代码。</p>
+
+<p>将项目clone到本地</p>
+
+<pre><code>$ cd env1
+$ git clone https://github.com/bitwolaiye/django_rest_api_sample.git
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[新的python项目]]></title>
+    <link href="http://bitwolaiye.github.io/blog/2013/11/24/new-python-project/"/>
+    <updated>2013-11-24T18:12:48+08:00</updated>
+    <id>http://bitwolaiye.github.io/blog/2013/11/24/new-python-project</id>
+    <content type="html"><![CDATA[<h2>想法</h2>
+
+<p>起因是因为要对之前的一部分学习进行总结，可是我对python这块只是简单应用，而非大拿，所以当要自己写点有深度的内容，发现还是相当的乏力。不过回想过去的很长一段时间还是遇到了很多问题同时也解决了问题，把这些问题总结下，也是个收获，还能分享给别人。所以我想就以之前的项目为原型，一步一步把再做一遍，同时回忆回忆问题，再总结总结分享下。</p>
+
+<p>这个项目暂定以宠物社区为目标，搭建面向移动平台、提供后台api的服务。</p>
+
+<p>在这个项目里，用户可以发布带一张图或一段短文本的信息。用户之间可以相互关注，关注后，可以看到被关注者发布的信息。用户可以对信息发表评论，评论后将会给被评论者发送通知。</p>
+
+<p>项目名:pet_api</p>
+
+<h2>计划章节</h2>
+
+<h3>1. 准备工作</h3>
+
+<h3>2. 框架搭建</h3>
+
+<h3>3. 基本功能实现</h3>
+
+<h3>4. 部署</h3>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello Github!]]></title>
