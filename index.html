@@ -9,7 +9,7 @@
 	<meta name="author" content="周琪(zhouqi)">
 
 	
-	<meta name="description" content="Nov 24th, 2013 新python项目&#8211;1.准备工作 python环境 我的工作机是Mac.而目标服务器应该大都是Ubuntu或者centOS，这2者我更倾向于Ubuntu，所以我将把Mac和Ubuntu下的步骤记录下来。 pip Mac下我用的包管理是brew， &hellip;">
+	<meta name="description" content="Nov 24th, 2013 新python项目&#8211;1.准备工作 一、准备python环境 我的工作机是Mac.而目标服务器应该大都是Ubuntu或者centOS，这2者我更倾向于Ubuntu，所以我将把Mac和Ubuntu下的步骤记录下来。 1.1 包管理 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -117,17 +117,17 @@
 	</div>
 	<h1 class="title" itemprop="name"><a href="/blog/2013/11/24/new-python-project-1-prepare/" itemprop="url">新python项目&#8211;1.准备工作</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		<h2>python环境</h2>
+		<h2>一、准备python环境</h2>
 
 <p>我的工作机是Mac.而目标服务器应该大都是Ubuntu或者centOS，这2者我更倾向于Ubuntu，所以我将把Mac和Ubuntu下的步骤记录下来。</p>
 
-<h3>pip</h3>
+<h3>1.1 包管理</h3>
 
 <p>Mac下我用的包管理是brew，Ubuntu自带的包管理是apt-get。</p>
 
 <p>pip是python下的包管理，pip如何装请自行google或者bing？</p>
 
-<h3>virtualenv</h3>
+<h3>1.2 virtualenv</h3>
 
 <p>为什么需要virtualenv？</p>
 
@@ -150,7 +150,7 @@ $ mkvirtualenv env1
 <p>需要进入虚拟环境时</p>
 
 <pre><code>$ cd ~/work/python_project/env1
-$ ./bin/activate
+$ source bin/activate
 </code></pre>
 
 <p>相关参考：</p>
@@ -161,25 +161,48 @@ $ ./bin/activate
 </ul>
 
 
-<h3>django</h3>
+<h3>1.3 django</h3>
 
 <p>之前我用的是django1.3后来升级到1.4，新装的环境一看已经是1.6了，所以这个项目将在django1.6的基础上继续</p>
 
 <pre><code>$ pip install django
 </code></pre>
 
-<h3>djangorestframework</h3>
+<h3>1.4 djangorestframework</h3>
 
 <p>djangorestframework是我找到的一个在django的基础上提供restful api的框架。版本2.3.9。</p>
 
 <pre><code>$ pip install djangorestframework
 </code></pre>
 
-<h2>DB</h2>
+<h3>1.5 MySQLdb</h3>
 
-<p>db选择MySQL，此处不再详述安装等过程。关键是这块环境我是已有的，懒得再捣腾，你懂的。</p>
+<p>db是MySQL，python下需要安装MySQLdb。</p>
 
-<h2>版本库</h2>
+<p>Ubuntu：</p>
+
+<pre><code>$ sudo apt-get install python-MySQLdb
+</code></pre>
+
+<p>Mac:</p>
+
+<p>mac下的安装似乎有点问题，简单的pip是装不了的，给个参考按<a href="http://blog.csdn.net/intel80586/article/details/8487682">mac os x 10.8 安装python-mysqldb血泪史</a> 的步骤做就可以了。我装的是MySQL-python-1.2.4b4，其实也不算太麻烦，就是下的源码包，然后修改下配置文件</p>
+
+<pre><code>mysql_config = /usr/local/mysql/bin/mysql_config
+</code></pre>
+
+<p>就可以了，验证是否安装ok，在python下</p>
+
+<pre><code>&gt;&gt;&gt; import MySQLdb
+</code></pre>
+
+<p>没异常就是ok了。</p>
+
+<h2>二、数据库</h2>
+
+<p>数据库选择MySQL，此处不再详述安装等过程。关键是这块环境我是已有的，懒得再捣腾，你懂的。</p>
+
+<h2>三、版本库</h2>
 
 <p>我在github上建立了一个开源项目<a href="https://github.com/bitwolaiye/django_rest_api_sample">django_rest_api_sample</a> 用于存储代码。</p>
 
@@ -218,7 +241,7 @@ $ git clone https://github.com/bitwolaiye/django_rest_api_sample.git
 	</div>
 	<h1 class="title" itemprop="name"><a href="/blog/2013/11/24/new-python-project/" itemprop="url">新的python项目</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		<h2>想法</h2>
+		<h2>一、想法</h2>
 
 <p>起因是因为要对之前的一部分学习进行总结，可是我对python这块只是简单应用，而非大拿，所以当要自己写点有深度的内容，发现还是相当的乏力。不过回想过去的很长一段时间还是遇到了很多问题同时也解决了问题，把这些问题总结下，也是个收获，还能分享给别人。所以我想就以之前的项目为原型，一步一步把再做一遍，同时回忆回忆问题，再总结总结分享下。</p>
 
@@ -228,15 +251,18 @@ $ git clone https://github.com/bitwolaiye/django_rest_api_sample.git
 
 <p>项目名:pet_api</p>
 
-<h2>计划章节</h2>
+<h2>二、计划章节</h2>
 
-<h3>1. 准备工作</h3>
+<br/>
 
-<h3>2. 框架搭建</h3>
 
-<h3>3. 基本功能实现</h3>
+<ol>
+<li>准备工作</li>
+<li>框架搭建</li>
+<li>基本功能实现</li>
+<li>部署</li>
+</ol>
 
-<h3>4. 部署</h3>
 
 		
 		
@@ -270,7 +296,7 @@ $ git clone https://github.com/bitwolaiye/django_rest_api_sample.git
 		<p>我很早之前就看过了github的page的功能，并且尝试搭了下，但是一直也没有坚持写下去。这次有点想法，于是参照了破船和唐巧写的内容，重新搭一次。后续我准备在这个平台正式的写点技术总结，不同于我在另一个平台上的流水，这边应该是一些对别人也有些用的内容，同时也是对自己的总结。
 这篇是一个开头，同时我也将在这片里面持续的记录利用github page搭建博客的过程以及遇到的问题。</p>
 
-<h3>1. 搭建</h3>
+<h2>一、搭建</h2>
 
 <p>大部分都参照于
 <a href="http://beyondvincent.com/blog/2013/08/03/108-creating-a-github-blog-using-octopress/">利用Octopress搭建一个Github博客 from 破船之家</a>
@@ -282,6 +308,40 @@ $ git clone https://github.com/bitwolaiye/django_rest_api_sample.git
 <p>评论我用了多说。可以选择的还有有言。</p>
 
 <p>后续的内容还需要继续摸索，慢慢更新。</p>
+
+<h2>二、心得</h2>
+
+<br/>
+
+
+<h3>2.1 fabric</h3>
+
+<p>我习惯用python的fabric来替代一些需要记忆的脚本，比如在这里我记不住发布的命令，于是每次翻别人blog太麻烦，于是我就用fabric。</p>
+
+<p>安装fabric</p>
+
+<pre><code>$ pip install fabric
+</code></pre>
+
+<p>在当前目录创建fab.py</p>
+
+<pre><code>from fabric.api import local
+def deploy(msg=''):
+    local('rake generate')
+    local('git add .')
+    local('git commit -am "%s"' % msg)
+    local('git push origin source')
+    local('rake deploy')
+</code></pre>
+
+<p>保存退出</p>
+
+<p>然后我需要发布时只需要输入</p>
+
+<pre><code>$ fab deploy:msg='these message is commit to github'
+</code></pre>
+
+<p>即可</p>
 
 		
 		
