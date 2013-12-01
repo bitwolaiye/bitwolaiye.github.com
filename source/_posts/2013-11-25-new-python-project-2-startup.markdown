@@ -8,6 +8,7 @@ categories:
 ---
 
 ## 一、新建项目
+[django](https://www.djangoproject.com)
 
 运行如下命令创建django项目
 
