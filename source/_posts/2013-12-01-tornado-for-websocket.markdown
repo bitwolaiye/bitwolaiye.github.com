@@ -16,7 +16,7 @@ categories:
 	$ cd ~/work/python_project/env2
 	$ mkdir chatroom
 	
-接着打开pyCharm{我的python IDE)，并配置好Project Interpreter -> Python Interperters。
+接着打开pyCharm（我的python IDE)，并配置好Project Interpreter -> Python Interperters。
 
 版本控制应该是用github，但暂时先跳过这一步。
 
@@ -25,7 +25,7 @@ categories:
 
 按tornado的介绍创建了app.py文件，再创建handlers.py，后续的handlers里放实现代码。虽然实际上写一个文件里也可以，不过分开应该更清晰。
 
-说到默认端口，tornado的默认端口一定是facebook某个华裔的程序员写的。为啥呢？8888，一听就是那种。。。不说了，你懂的。想当年，我参与的一个团队的终端机的的默认密码就是6个8.相比之下，django是8000，rails是3000，octopress是4000，就让人感觉普通青年了许多。
+说到默认端口，tornado的默认端口一定是facebook某个华裔的程序员写的。为啥呢？8888，一听就是那种。。。不说了，你懂的。想当年，我参与的一个团队的终端机的的默认密码就是6个8.相比之下，django是8000，rails是3000，octopress（Jekyll）是4000，就让人感觉普通青年了许多。
 
 简单几行代码后就可以运行看效果了
 
