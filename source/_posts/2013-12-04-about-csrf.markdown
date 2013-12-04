@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 
-## 什么是csrf
+## 一、什么是csrf
 <br/>
 [CSRF from 百度百科](http://baike.baidu.com/view/1609487.htm)
 
@@ -23,7 +23,7 @@ CSRF（Cross-site request forgery跨站请求伪造，也被称为“one click a
 2. 对请求增加一个随机数，这个随机数是第三方不能轻易伪造的。[浅谈CSRF攻击方式](http://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html) 在这里面提供了3种方式，都是个思路。其实我认为靠谱的还是第一种，django也是这种方式。下面来看django来如何抵御csrf攻击。
 
 
-## django怎么抵御csrf攻击
+## 二、django怎么抵御csrf攻击
 <br/>
 
 [原文](https://docs.djangoproject.com/en/dev/ref/contrib/csrf)
@@ -48,14 +48,14 @@ CSRF（Cross-site request forgery跨站请求伪造，也被称为“one click a
 
 django单独将了一章节说ajax怎么处理，其实主要是因为每次post请求都增加一个csrf-token会有些麻烦，于是他建议你写到header里去。
 
-### django对付csrf是否100%安全？
+### 4. django对付csrf是否100%安全？
 
 99%
 
 为何这么说呢？因为cookie也不是100%安全吧。
 
 
-## 移动应用有无csrf风险？
+## 三、移动应用有无csrf风险？
 <br/>
 
 <!--先说下我个人的经历。我最初是用的django搭建的一个面向移动应用的api，登陆那块我是直接继承并重载了django的auth模块，让其的验证逻辑按照我的逻辑进行的验证。同时因为不足够了解django，所以这个csrf防御就比较神奇的跟着django加入了。最初我还不知道csrf，然后在写调用api的例子时就发现了问题，后来折腾比较久才发现了有个csrftoken的东西必须带上。
