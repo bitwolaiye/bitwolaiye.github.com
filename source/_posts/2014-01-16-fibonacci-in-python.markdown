@@ -3,7 +3,7 @@ layout: post
 title: "Fibonacci in Python"
 date: 2014-01-16 10:02:20 +0800
 comments: true
-categories: Python, interview
+categories: Python interview
 ---
 
 这是一道面试的题目，实际很简单，但，我没很好答上来。因为不够pythonic。
