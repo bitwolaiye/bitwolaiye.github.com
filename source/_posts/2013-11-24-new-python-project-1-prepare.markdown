@@ -64,11 +64,22 @@ Ubuntu：
 
 	$ sudo apt-get install python-MySQLdb
 	
+我发现Ubuntu的virtualenv下直接装也有问题，所以还是源码包试试吧。[下载地址](http://downloads.sourceforge.net/project/mysql-python/mysql-python-test/1.2.4b4/MySQL-python-1.2.4b4.tar.gz?r=&ts=1386213050&use_mirror=jaist)
+
+不过Ubuntu下不用改那个配置了，直接敲命令安装即可。
+
+	
 Mac:
 
-mac下的安装似乎有点问题，简单的pip是装不了的，给个参考按[mac os x 10.8 安装python-mysqldb血泪史](http://blog.csdn.net/intel80586/article/details/8487682) 的步骤做就可以了。我装的是MySQL-python-1.2.4b4，其实也不算太麻烦，就是下的源码包，然后修改下配置文件
+mac下的安装似乎有点问题，简单的pip是装不了的，给个参考按[mac os x 10.8 安装python-mysqldb血泪史](http://blog.csdn.net/intel80586/article/details/8487682) 的步骤做就可以了。我装的是MySQL-python-1.2.4b4，其实也不算太麻烦，就是下的源码包，然后修改下配置文件site.cfg
 
 	mysql_config = /usr/local/mysql/bin/mysql_config
+	
+修改完了运行命令
+
+	$ python setup.py clean
+	$ python setup.py build
+	$ python setup.py install
 
 就可以了，验证是否安装ok，在python下
 
