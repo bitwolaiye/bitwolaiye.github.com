@@ -9,7 +9,8 @@
 	<meta name="author" content="周琪(zhouqi)">
 
 	
-	<meta name="description" content="Jan 16th, 2014 Python 准备Python工程师面试 之前在招聘网站放过简历，于是前2天有面试电话打来，是一家业内号称卖“理念”的公司，也的确还算有名气的公司，自称大公司中的小公司。职位是Python工程师。心想去去也好，看看自己到底是个什么水平，呆一家公司9年时间， &hellip;">
+	<meta name="description" content="Jan 16th, 2014 Python,, interview Fibonacci in Python 这是一道面试的题目，实际很简单，但，我没很好答上来。因为不够pythonic。 我的实现 fib_list = [1, 1]
+def _f(): global fib_list &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,6 +94,97 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-01-16T10:02:20+08:00" data-updated="true" itemprop="datePublished">Jan 16<span>th</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/python/'>Python,</a>, <a class='category' href='/blog/categories/interview/'>interview</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/01/16/fibonacci-in-python/" itemprop="url">Fibonacci in Python</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>这是一道面试的题目，实际很简单，但，我没很好答上来。因为不够pythonic。</p>
+
+<p>我的实现</p>
+
+<pre><code>fib_list = [1, 1]
+def _f():
+  global fib_list
+  fib_list.append(sum(fib_list[-2:]))
+
+def fib(index):
+  if index &lt; 0:
+    return -1
+  global fib_list
+  if len(fib_list) &lt; index:
+    for i in xrange(index - len(fib_list)):
+      _f()
+  return fib_list[index - 1]
+</code></pre>
+
+<p>当时我还写了另一个，但回来发现是错的。</p>
+
+<p>搜了下，有这2个文章有更好的解法</p>
+
+<p><a href="http://www.zacharyfox.com/blog/fibonacci-project/fibonacci-in-python">Fibonacci in Python</a></p>
+
+<p><del><a href="http://www.cr173.com/html/6631_1.html">用Python实现Fibonacci函数</a></del></p>
+
+<p>后一篇基本可以不看，就属于卖萌型的。回字有几种写法实际上只是程序员卖弄的技巧。</p>
+
+<pre><code>def fibonacci(n):
+  a,b = 0,1
+  for i in range(0,n):
+    a,b, = b,a+b
+  return a
+</code></pre>
+
+<p>这个基本就是比较简洁的了。</p>
+
+<p>还有一种Generator的实现方式</p>
+
+<pre><code>def fib():
+  a, b = 0, 1
+  while 1:
+    yield a
+    a, b = b, a + b
+
+a = fib()
+a.next()
+for i in range(10):
+  print a.next(),
+</code></pre>
+
+<p>但我得辩解下，对于非科班的程序员，在工作中我很少需要关注该数列的实现方式，往往是根据实际的业务现想。像背诵一样的默写出这个实现实际上没有太大意义。</p>
+
+<p>不过还没完，我搜到了<a href="http://en.literateprograms.org/Category:Fibonacci_numbers">http://en.literateprograms.org/Category:Fibonacci_numbers</a></p>
+
+<p>这个对该问题还有更加深入的解释。包括如何利用数学上的知识更快的算出结果。</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">

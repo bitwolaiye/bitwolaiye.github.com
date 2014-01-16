@@ -1,0 +1,221 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Fibonacci in Python - ZhouQi's Blog</title>
+	<meta name="author" content="周琪(zhouqi)">
+
+	
+	<meta name="description" content="Fibonacci in Python 这是一道面试的题目，实际很简单，但，我没很好答上来。因为不够pythonic。 我的实现 fib_list = [1, 1]
+def _f(): global fib_list fib_list.append(sum(fib_list[-2:])) def &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="ZhouQi's Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://bitwolaiye.github.io/blog/2014/01/16/fibonacci-in-python/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("bitwolaiye@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+<hgroup>
+  <h1><a href="/">ZhouQi's Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:bitwolaiye@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/bitwolaiye" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Fibonacci in Python</h1>
+	<div class="entry-content" itemprop="articleBody"><p>这是一道面试的题目，实际很简单，但，我没很好答上来。因为不够pythonic。</p>
+
+<p>我的实现</p>
+
+<pre><code>fib_list = [1, 1]
+def _f():
+  global fib_list
+  fib_list.append(sum(fib_list[-2:]))
+
+def fib(index):
+  if index &lt; 0:
+    return -1
+  global fib_list
+  if len(fib_list) &lt; index:
+    for i in xrange(index - len(fib_list)):
+      _f()
+  return fib_list[index - 1]
+</code></pre>
+
+<p>当时我还写了另一个，但回来发现是错的。</p>
+
+<p>搜了下，有这2个文章有更好的解法</p>
+
+<p><a href="http://www.zacharyfox.com/blog/fibonacci-project/fibonacci-in-python">Fibonacci in Python</a></p>
+
+<p><del><a href="http://www.cr173.com/html/6631_1.html">用Python实现Fibonacci函数</a></del></p>
+
+<p>后一篇基本可以不看，就属于卖萌型的。回字有几种写法实际上只是程序员卖弄的技巧。</p>
+
+<pre><code>def fibonacci(n):
+  a,b = 0,1
+  for i in range(0,n):
+    a,b, = b,a+b
+  return a
+</code></pre>
+
+<p>这个基本就是比较简洁的了。</p>
+
+<p>还有一种Generator的实现方式</p>
+
+<pre><code>def fib():
+  a, b = 0, 1
+  while 1:
+    yield a
+    a, b = b, a + b
+
+a = fib()
+a.next()
+for i in range(10):
+  print a.next(),
+</code></pre>
+
+<p>但我得辩解下，对于非科班的程序员，在工作中我很少需要关注该数列的实现方式，往往是根据实际的业务现想。像背诵一样的默写出这个实现实际上没有太大意义。</p>
+
+<p>不过还没完，我搜到了<a href="http://en.literateprograms.org/Category:Fibonacci_numbers">http://en.literateprograms.org/Category:Fibonacci_numbers</a></p>
+
+<p>这个对该问题还有更加深入的解释。包括如何利用数学上的知识更快的算出结果。</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+        
+            <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1350524692146644" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zhouqi"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+        
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2014 - 周琪(zhouqi) -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>
