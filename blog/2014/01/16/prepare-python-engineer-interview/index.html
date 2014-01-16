@@ -1,0 +1,543 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>准备Python工程师面试 - ZhouQi's Blog</title>
+	<meta name="author" content="周琪(zhouqi)">
+
+	
+	<meta name="description" content="准备Python工程师面试 之前在招聘网站放过简历，于是前2天有面试电话打来，是一家业内号称卖“理念”的公司，也的确还算有名气的公司，自称大公司中的小公司。职位是Python工程师。心想去去也好，看看自己到底是个什么水平，呆一家公司9年时间，都不知道外面的世界是什么样的了，偶尔会狂妄自大， &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="ZhouQi's Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://bitwolaiye.github.io/blog/2014/01/16/prepare-python-engineer-interview/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("bitwolaiye@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+<hgroup>
+  <h1><a href="/">ZhouQi's Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:bitwolaiye@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/bitwolaiye" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">准备Python工程师面试</h1>
+	<div class="entry-content" itemprop="articleBody"><p>之前在招聘网站放过简历，于是前2天有面试电话打来，是一家业内号称卖“理念”的公司，也的确还算有名气的公司，自称大公司中的小公司。职位是Python工程师。心想去去也好，看看自己到底是个什么水平，呆一家公司9年时间，都不知道外面的世界是什么样的了，偶尔会狂妄自大，偶尔会妄自菲薄。</p>
+
+<p>比如说去这家公司面试心里就很紧张，Python实际只用了2年时间，期间一直仅仅忙于实现功能即可，对很多细节都是一知半解，程序能通就Ok。所以我还挺认真的开始找找资料，复习下。<del>（当然还有个原因对方说有笔试，囧。心里很担心万一全不会多丢人啊！！）</del></p>
+
+<p>这个总结是去之前写的，把它发出来的同时实际已经去过了，结果面试结果的感觉是不咋地，但也有好处，就是达到了认清自己、找到缺点的目的。ok，这块回头再写。</p>
+
+<h3>pyc pyo pyd</h3>
+
+<p><a href="http://www.cnblogs.com/dkblog/archive/2009/04/16/1980757.html">http://www.cnblogs.com/dkblog/archive/2009/04/16/1980757.html</a></p>
+
+<h3>什么是pyc文件</h3>
+
+<p>pyc是一种二进制文件，是由py文件经过编译后，生成的文件，是一种byte code，py文件变成pyc文件后，加载的速度有所提高，而且pyc是一种跨平台的字节码，是由python的虚拟机来执行的，这个是类似于JAVA或者.NET的虚拟机的概念。pyc的内容，是跟python的版本相关的，不同版本编译后的pyc文件是不同的，2.5编译的pyc文件，2.4版本的 python是无法执行的。</p>
+
+<h3>什么是pyo文件</h3>
+
+<p>pyo是优化编译后的程序 python -O 源文件即可将源程序编译为pyo文件</p>
+
+<h3>什么是pyd文件</h3>
+
+<p>pyd是python的动态链接库。</p>
+
+<h3>为什么需要pyc文件</h3>
+
+<p>这个需求太明显了，因为py文件是可以直接看到源码的，如果你是开发商业软件的话，不可能把源码也泄漏出去吧？所以就需要编译为pyc后，再发布出去。当然，pyc文件也是可以反编译的，不同版本编译后的pyc文件是不同的，根据python源码中提供的opcode，可以根据pyc文件反编译出 py文件源码，网上可以找到一个反编译python2.3版本的pyc文件的工具，不过该工具从python2.4开始就要收费了，如果需要反编译出新版本的pyc文件的话，就需要自己动手了（俺暂时还没这能力^&mdash;^）,不过你可以自己修改python的源代码中的opcode文件，重新编译 python，从而防止不法分子的破解。</p>
+
+<h3>py文件在运行时会产生pyc文件，用于缓存编译后代码 不完全正确 ？？ why？？</h3>
+
+<h2>zen of python</h2>
+
+<p>The Zen of Python, by Tim Peters</p>
+
+<ul>
+<li>Beautiful is better than ugly.</li>
+<li>Explicit is better than implicit.</li>
+<li>Simple is better than complex.</li>
+<li>Complex is better than complicated.</li>
+<li>Flat is better than nested.</li>
+<li>Sparse is better than dense.</li>
+<li>Readability counts.</li>
+<li>Special cases aren&rsquo;t special enough to break the rules.</li>
+<li>Although practicality beats purity.</li>
+<li>Errors should never pass silently.</li>
+<li>Unless explicitly silenced.</li>
+<li>In the face of ambiguity, refuse the temptation to guess.</li>
+<li>There should be one&mdash; and preferably only one &mdash;obvious way to do it.</li>
+<li>Although that way may not be obvious at first unless you&rsquo;re Dutch.</li>
+<li>Now is better than never.</li>
+<li>Although never is often better than <em>right</em> now.</li>
+<li>If the implementation is hard to explain, it&rsquo;s a bad idea.</li>
+<li>If the implementation is easy to explain, it may be a good idea.</li>
+<li>Namespaces are one honking great idea &mdash; let&rsquo;s do more of those!</li>
+</ul>
+
+
+<p>翻译</p>
+
+<ul>
+<li>美比丑好</li>
+<li>直言不讳比心照不宣好</li>
+<li>简单比复杂好</li>
+<li>复杂比难以理解好</li>
+<li>平面的比嵌套的好</li>
+<li>错落有致比密密匝匝的好</li>
+<li>可读性很重要</li>
+<li>虽然实用比纯粹更重要 但特殊情况不能特殊到打破规律</li>
+<li>永远别让错误悄悄地溜走 除非是你故意的</li>
+<li>碰到模棱两可的地方，绝对不要去作猜测</li>
+<li>什么事情都应该有一个，而且最好只有一个显而易见的解决办法</li>
+<li>虽然刚开始的时候，这个办法可能不是那么的显而易见，但谁叫你不是荷兰人</li>
+<li>有些事情不理不睬可能会比过一会解决要好</li>
+<li>但最好是现在就解决</li>
+<li>如果一个想法实现起来很困难，那它本身就不是一个好想法</li>
+<li>如果一个想法实现起来很容易，那它或许就是一个好想法</li>
+<li>命名空间是一个很了不起的想法,让我们多多使用吧</li>
+</ul>
+
+
+<h2>排序</h2>
+
+<pre><code>str_list = ['a', 'b', 'c']
+str_list.sort(key=lambda x:x.lower(),reverse=True)
+</code></pre>
+
+<h2>随机</h2>
+
+<pre><code>import random
+random.random()
+random.sample(range(10), 2)
+l = range(10)
+random.shuffle(l)
+</code></pre>
+
+<h2>文件</h2>
+
+<pre><code>with open('1.txt', 'w') as f:
+    f.write('abc')
+
+with open('1.txt', 'r') as f:
+    for s in f:
+        print s
+
+import os
+os.listdir('.')
+
+import shutil
+shutil.copyfile('1.txt', '2.txt')
+
+os.remove('2.txt')
+</code></pre>
+
+<h2>.items() .iteritems()</h2>
+
+<p>一个生成全部，一个是迭代器</p>
+
+<h2>常用类型常用方法</h2>
+
+<pre><code>dir(list)
+['__add__', '__class__', '__contains__', '__delattr__', '__delitem__', '__delslice__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getslice__', '__gt__', '__hash__', '__iadd__', '__imul__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__rmul__', '__setattr__', '__setitem__', '__setslice__', '__sizeof__', '__str__', '__subclasshook__', 'append', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort']
+
+dir(tuple)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index']
+
+dir(dict)
+['__class__', '__cmp__', '__contains__', '__delattr__', '__delitem__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'has_key', 'items', 'iteritems', 'iterkeys', 'itervalues', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values', 'viewitems', 'viewkeys', 'viewvalues']
+
+dir(set)
+['__and__', '__class__', '__cmp__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__iand__', '__init__', '__ior__', '__isub__', '__iter__', '__ixor__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__rand__', '__reduce__', '__reduce_ex__', '__repr__', '__ror__', '__rsub__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__xor__', 'add', 'clear', 'copy', 'difference', 'difference_update', 'discard', 'intersection', 'intersection_update', 'isdisjoint', 'issubset', 'issuperset', 'pop', 'remove', 'symmetric_difference', 'symmetric_difference_update', 'union', 'update']
+
+dir(str)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+</code></pre>
+
+<h3>list</h3>
+
+<p>list可以作为栈</p>
+
+<p>list可以作为队列</p>
+
+<p>list到list的映射。??不明白</p>
+
+<p>any和all在list中的使用。</p>
+
+<pre><code>l = range(10)
+all(n&lt;10 for n in l)
+any(n==0 for n in l)
+</code></pre>
+
+<p>list与for的结合，相当于高级语言中的foreach功能。</p>
+
+<p>对list的enumerate与for的结合，相当于高级语言中的for功能。</p>
+
+<p>list的嵌套使用，相当于多维数组。</p>
+
+<p>del相当于list本身的remove，都可以用来删除list中的元素。</p>
+
+<pre><code>l = range(10)
+del l[9]
+</code></pre>
+
+<p>zip</p>
+
+<h3>tuple</h3>
+
+<p>tuple相当于是不可修改的list，所以同时也不具有list的很多修改的方法，例如append，insert，remove等；但是tuples仍然可以使用count，index等查找方法。</p>
+
+<p>使用 t2 = (2,4,8)来定义tuple，也可以使用list来定义tuple如 l = [1,2,3] 和 t = tuple(l)</p>
+
+<h3>set</h3>
+
+<p>set的定义使用{}。</p>
+
+<p>可以将list使用set显示的转化为set。</p>
+
+<p>可以用in来判断指定元素是否存在于set中。</p>
+
+<p>set于for结合使用，相当于foreach。</p>
+
+<p>set可以进行|，&amp;，^,-操作。</p>
+
+<h3>dict</h3>
+
+<p>dictionary使用{1 : &lsquo;tom&rsquo;, 2 : &lsquo;bill&rsquo;}来定义，也可以使用dict([(&lsquo;sape&rsquo;, 4139), (&lsquo;guido&rsquo;, 4127), (&lsquo;jack&rsquo;, 4098)])来从list定义dictionary。</p>
+
+<p>[]=来增加新的值。</p>
+
+<p>del来删除指定的key和value。</p>
+
+<p>in用来查找key是否存在。</p>
+
+<h3>语法糖</h3>
+
+<pre><code>isinstance([], list)
+isinstance((), tuple)
+isinstance({}, dict)
+isinstance({1:2}, dict)
+isinstance({1}, set)
+</code></pre>
+
+<h2>Pythonic</h2>
+
+<p>只可意会不可言传！</p>
+
+<p>或者 参见</p>
+
+<pre><code>import this
+</code></pre>
+
+<h2>help</h2>
+
+<p>参看方法参数</p>
+
+<pre><code>help(''.index)
+</code></pre>
+
+<h2>lambda</h2>
+
+<p>好处</p>
+
+<p>匿名函数, 方便, 类函数式, 写回调方便</p>
+
+<h3>filter</h3>
+
+<p>filter(function, sequence)：对sequence中的item依次执行function(item)，将执行结果为True的item组成一个List/String/Tuple（取决于sequence的类型）返回：</p>
+
+<h3>map</h3>
+
+<p>map(function, sequence) ：对sequence中的item依次执行function(item)，见执行结果组成一个List返回：</p>
+
+<h3>reduce</h3>
+
+<p>reduce(function, sequence, starting_value)：对sequence中的item顺序迭代调用function，如果有starting_value，还可以作为初始值调用，例如可以用来对List求和：</p>
+
+<h2>range xrange</h2>
+
+<p>一个列表 <del>一个迭代器</del> xrange</p>
+
+<h2>yield</h2>
+
+<p>？？？</p>
+
+<h2>python支持多线程，能够单进程无缝发挥多路CPU的优势</h2>
+
+<p>支持，不能够</p>
+
+<p>为什么不能？并行计算？Python的线程实际上是使用单核在运行。</p>
+
+<p><a href="https://wiki.python.org/moin/ParallelProcessing">https://wiki.python.org/moin/ParallelProcessing</a></p>
+
+<blockquote><p>在大多数系统上，Python同时支持消息传递和基于线程的并发编程。尽管大多数程序员熟悉的往往是线程接口，但实际上Python线程受到的限制有很多。尽管最低限度是线程安全的，但Python解释器还是使用了内部的GIL(Global Interperter Lock,全局解释器锁定)，在任意指定的时刻只能在一个处理器上运行。尽管GIL经常是Python社区中争论的热点，但在可以预见的将来它都不可能消失。</p></blockquote>
+
+<p>号称来源于《python参考手册》但我没去证实。</p>
+
+<h2>在python中，使用for从列表中删除元素是错误的做法，会导致漏删元素。正确的做法是使用python内置的filter函数</h2>
+
+<br/>
+
+
+<h2>题目 考虑Decorator 装饰器</h2>
+
+<pre><code>def wrap_info (f):
+    b = {"b":10};
+    def inner_func (*p, **k):
+        print b['b'], p, k;
+        b['b'] += 1;
+        f(*p, **k);
+    return inner_func;
+
+def info (s):    print "func info: %s" % s;
+
+if __name__ == "__main__":
+    f1 = wrap_info (info);
+    f1 ("a");
+    f2 = wrap_info (info);
+    f1 ("b");
+    f2 ("c");
+</code></pre>
+
+<p><a href="http://www.cnblogs.com/rhcad/archive/2011/12/21/2295507.html">Python装饰器学习（九步入门）</a></p>
+
+<h2>题目 纯卖弄！</h2>
+
+<pre><code>a="a=%s%s%s;print a%%(chr(34),a,chr(34));";print a%(chr(34),a,chr(34));
+</code></pre>
+
+<h2>题目 单例模式</h2>
+
+<pre><code>class singleton (object):
+    """ 单例模式的实现 """
+    def __new__ (cls, **kargs):
+        if '_instance' not in cls.__dict__:
+            cls._instance = object.__new__ (cls, **kargs);
+        return cls._instance;
+</code></pre>
+
+<h2>动态加载 反射等</h2>
+
+<p><a href="http://www.cnblogs.com/huxi/archive/2011/01/02/1924317.html">Python自省（反射）指南</a></p>
+
+<h3>访问元数据</h3>
+
+<h3>使用inspect</h3>
+
+<h2>unicode</h2>
+
+<pre><code>s.decode('utf-8')
+u.encode()
+</code></pre>
+
+<h2>传值？传引用？传值！</h2>
+
+<p><a href="http://stackoverflow.com/questions/986006/python-how-do-i-pass-a-variable-by-reference/986145#986145">stackoverflow</a></p>
+
+<p>简单来说，你在方法里重新对一个参数赋值可能不会改变。</p>
+
+<p>建议是return出来然后改变</p>
+
+<pre><code>class PassByReference:
+  def __init__(self):
+    self.variable = 'Original'
+    self.Change(self.variable)
+    print self.variable
+  def Change(self, var):
+    var = 'Changed'
+
+p = PassByReference()
+p.Change(p.variable)
+print p.variable # Original
+</code></pre>
+
+<p>改为</p>
+
+<pre><code>class PassByReference:
+  def __init__(self):
+    self.variable = 'Original'
+    self.Change()
+    print self.variable
+  def Change(self):
+    self.variable = 'Changed'
+
+p = PassByReference()
+p.Change()
+print p.variable # Changed
+</code></pre>
+
+<p>或者</p>
+
+<pre><code>class PassByReference:
+  def __init__(self):
+    self.variable = 'Original'
+    self.Change(p.variable)
+    print self.variable
+  def Change(self, var):
+    return 'Changed'
+
+p = PassByReference()
+p.variable = p.Change(p.variable)
+print p.variable # Changed
+</code></pre>
+
+<p>甚至是变成一个数组传进去等等，但真不是个好办法了。太丑！</p>
+
+<h2>进阶链接</h2>
+
+<p><a href="http://ilian.i-n-i.org/python-interview-question-and-answers/">Python Interview Question and Answers</a></p>
+
+<h2>Python的内存是使用的heap？</h2>
+
+<p><a href="http://docs.python.org/2/c-api/memory.html">http://docs.python.org/2/c-api/memory.html</a></p>
+
+<p><a href="http://www.ruanyifeng.com/blog/2013/11/stack.html">阮一峰对堆和栈的解释</a></p>
+
+<h2>virtualenv</h2>
+
+<pre><code>source activate
+deactivate
+
+pip freeze &gt; filename
+pip install -r filename
+</code></pre>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+        
+            <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1350524692146644" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zhouqi"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+        
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2014 - 周琪(zhouqi) -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

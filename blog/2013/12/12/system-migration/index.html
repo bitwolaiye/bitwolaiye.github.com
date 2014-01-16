@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>新的python项目 - ZhouQi's Blog</title>
+	<title>系统迁移 - ZhouQi's Blog</title>
 	<meta name="author" content="周琪(zhouqi)">
 
 	
-	<meta name="description" content="新的python项目 一、想法 起因是因为要对之前的一部分学习进行总结，可是我对python这块只是简单应用，而非大拿，所以当要自己写点有深度的内容，发现还是相当的乏力。不过回想过去的很长一段时间还是遇到了很多问题同时也解决了问题，把这些问题总结下，也是个收获，还能分享给别人。 &hellip;">
+	<meta name="description" content="系统迁移 因为各种原因，准备将原来的跑db+api的服务器与存放图片的服务器合并，同时由于db+api的服务器的系统版本老、配置低、硬盘小，所以只能采用往图片服务器迁移的方案。那么迁移db+api的话就有不少风险，因为不是简单的把文件挪过去那么简单了。 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
 
 	<link href="/atom.xml" rel="alternate" title="ZhouQi's Blog" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://bitwolaiye.github.io/blog/2013/11/24/new-python-project/">
+	<link rel="canonical" href="http://bitwolaiye.github.io/blog/2013/12/12/system-migration/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -92,29 +92,28 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name">新的python项目</h1>
-	<div class="entry-content" itemprop="articleBody"><h2>一、想法</h2>
+	<h1 class="title" itemprop="name">系统迁移</h1>
+	<div class="entry-content" itemprop="articleBody"><p>因为各种原因，准备将原来的跑db+api的服务器与存放图片的服务器合并，同时由于db+api的服务器的系统版本老、配置低、硬盘小，所以只能采用往图片服务器迁移的方案。那么迁移db+api的话就有不少风险，因为不是简单的把文件挪过去那么简单了。我觉得难点应该是db的数据迁移和api的环境迁移。db的方面有大拿解决，我就得自己准备api的环境迁移。我心里没大把握，所以提前抽点时间做点功课，减少出现问题的几率。</p>
 
-<p>起因是因为要对之前的一部分学习进行总结，可是我对python这块只是简单应用，而非大拿，所以当要自己写点有深度的内容，发现还是相当的乏力。不过回想过去的很长一段时间还是遇到了很多问题同时也解决了问题，把这些问题总结下，也是个收获，还能分享给别人。所以我想就以之前的项目为原型，一步一步把再做一遍，同时回忆回忆问题，再总结总结分享下。</p>
+<p>我做了以下检查</p>
 
-<p>这个项目暂定以宠物社区为目标，搭建面向移动平台、提供后台api的服务。</p>
+<ul>
+<li>系统版本</li>
+<li>系统软件包</li>
+<li>python版本</li>
+<li>pip下已安装的python包</li>
+<li>nginx配置</li>
+<li>定时任务cron</li>
+<li>其他服务</li>
+</ul>
 
-<p>在这个项目里，用户可以发布带一张图或一段短文本的信息。用户之间可以相互关注，关注后，可以看到被关注者发布的信息。用户可以对信息发表评论，评论后将会给被评论者发送通知。</p>
 
-<p>项目名:pet_api</p>
+<p>我感觉检查pip下已安装包是个重要点。</p>
 
-<h2>二、计划章节</h2>
+<p>命令：</p>
 
-<br/>
-
-
-<ol>
-<li>准备工作</li>
-<li>框架搭建</li>
-<li>基本功能实现</li>
-<li>部署</li>
-</ol>
-
+<pre><code>$ pip freeze
+</code></pre>
 </div>
 
 </article>

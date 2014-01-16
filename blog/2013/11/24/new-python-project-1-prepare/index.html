@@ -160,11 +160,22 @@ $ source bin/activate
 <pre><code>$ sudo apt-get install python-MySQLdb
 </code></pre>
 
+<p>我发现Ubuntu的virtualenv下直接装也有问题，所以还是源码包试试吧。<a href="http://downloads.sourceforge.net/project/mysql-python/mysql-python-test/1.2.4b4/MySQL-python-1.2.4b4.tar.gz?r=&amp;ts=1386213050&amp;use_mirror=jaist">下载地址</a></p>
+
+<p>不过Ubuntu下不用改那个配置了，直接敲命令安装即可。</p>
+
 <p>Mac:</p>
 
-<p>mac下的安装似乎有点问题，简单的pip是装不了的，给个参考按<a href="http://blog.csdn.net/intel80586/article/details/8487682">mac os x 10.8 安装python-mysqldb血泪史</a> 的步骤做就可以了。我装的是MySQL-python-1.2.4b4，其实也不算太麻烦，就是下的源码包，然后修改下配置文件</p>
+<p>mac下的安装似乎有点问题，简单的pip是装不了的，给个参考按<a href="http://blog.csdn.net/intel80586/article/details/8487682">mac os x 10.8 安装python-mysqldb血泪史</a> 的步骤做就可以了。我装的是MySQL-python-1.2.4b4，其实也不算太麻烦，就是下的源码包，然后修改下配置文件site.cfg</p>
 
 <pre><code>mysql_config = /usr/local/mysql/bin/mysql_config
+</code></pre>
+
+<p>修改完了运行命令</p>
+
+<pre><code>$ python setup.py clean
+$ python setup.py build
+$ python setup.py install
 </code></pre>
 
 <p>就可以了，验证是否安装ok，在python下</p>
@@ -234,7 +245,7 @@ var duoshuoQuery = {short_name:"zhouqi"};
 </div>
 			</div>
 			<footer id="footer" class="inner"><p>
-  Copyright &copy; 2013 - 周琪(zhouqi) -
+  Copyright &copy; 2014 - 周琪(zhouqi) -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
