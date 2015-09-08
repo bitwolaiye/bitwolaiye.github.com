@@ -4,7 +4,7 @@
   <title><![CDATA[ZhouQi's Blog]]></title>
   <link href="http://bitwolaiye.github.io/atom.xml" rel="self"/>
   <link href="http://bitwolaiye.github.io/"/>
-  <updated>2014-01-16T14:19:49+08:00</updated>
+  <updated>2015-09-08T12:47:15+08:00</updated>
   <id>http://bitwolaiye.github.io/</id>
   <author>
     <name><![CDATA[周琪(zhouqi)]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[初试Node.js]]></title>
+    <link href="http://bitwolaiye.github.io/blog/2014/02/20/try-nodejs-at-wechat/"/>
+    <updated>2014-02-20T14:29:48+08:00</updated>
+    <id>http://bitwolaiye.github.io/blog/2014/02/20/try-nodejs-at-wechat</id>
+    <content type="html"><![CDATA[<p>公司准备弄个微信服务号，于是几天前开始看了看微信服务号能干的事情。个人感觉，微信并没有给服务号提供什么神级api，仅仅是被动式的客服，也不知道为什么被各大科技博客吹上了天。干不了多少也得干，好吧，搜了下github，star最多的wechat的project都是node.js的，其次是php、python。前几天弄blockexplorer.com的时候被php伤了，一时半会不想碰，python的似乎也不太成熟。众多原因下，我鼓起勇气，node.js就node.js吧。</p>
+
+<h2>环境</h2>
+
+<p>mac下的环境是ok的，之前用rails的js模块就是node.js的。</p>
+
+<pre><code>brew install nodejs
+</code></pre>
+
+<p>IDE选择WebStorm，Jetbrains真是。。。唉，真心好公司。</p>
+
+<p>ubuntu 12.04下似乎默认apt-get安装的是旧版本</p>
+
+<pre><code>apt-get install python-software-properties
+apt-add-repository ppa:chris-lea/node.js
+apt-get update
+
+apt-get install nodejs
+apt-get install npm
+</code></pre>
+
+<p>上面的方法似乎没用，因为apt-get的源里的npm依赖旧版本的nodejs。</p>
+
+<p><a href="https://gist.github.com/dwayne/2983873">https://gist.github.com/dwayne/2983873</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fibonacci in Python]]></title>
@@ -668,10 +700,32 @@ $ source bin/activate
 
 <p>Mac:</p>
 
+<p><em>更新：</em></p>
+
+<p>直接建一个软链</p>
+
+<pre><code>ln -s /usr/local/mysql/bin/mysql_config /usr/local/bin/mysql_config
+</code></pre>
+
+<p>因为反复要用，老下包然后改太麻烦</p>
+
 <p>mac下的安装似乎有点问题，简单的pip是装不了的，给个参考按<a href="http://blog.csdn.net/intel80586/article/details/8487682">mac os x 10.8 安装python-mysqldb血泪史</a> 的步骤做就可以了。我装的是MySQL-python-1.2.4b4，其实也不算太麻烦，就是下的源码包，然后修改下配置文件site.cfg</p>
 
 <pre><code>mysql_config = /usr/local/mysql/bin/mysql_config
 </code></pre>
+
+<p>如果报错</p>
+
+<pre><code>error: command 'cc' failed with exit status 1
+</code></pre>
+
+<p>则运行</p>
+
+<pre><code>export CFLAGS=-Qunused-arguments
+export CPPFLAGS=-Qunused-arguments
+</code></pre>
+
+<p>来源<a href="http://stackoverflow.com/questions/21638444/error-command-cc-failed-with-exit-status-1-mysqldb-installation-on-mac">stackoverflow</a></p>
 
 <p>修改完了运行命令</p>
 
