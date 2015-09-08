@@ -71,9 +71,28 @@ Ubuntu：
 	
 Mac:
 
+*更新：*
+
+直接建一个软链
+
+	ln -s /usr/local/mysql/bin/mysql_config /usr/local/bin/mysql_config
+
+因为反复要用，老下包然后改太麻烦
+
 mac下的安装似乎有点问题，简单的pip是装不了的，给个参考按[mac os x 10.8 安装python-mysqldb血泪史](http://blog.csdn.net/intel80586/article/details/8487682) 的步骤做就可以了。我装的是MySQL-python-1.2.4b4，其实也不算太麻烦，就是下的源码包，然后修改下配置文件site.cfg
 
 	mysql_config = /usr/local/mysql/bin/mysql_config
+	
+如果报错
+	
+	error: command 'cc' failed with exit status 1
+	
+则运行
+
+	export CFLAGS=-Qunused-arguments
+	export CPPFLAGS=-Qunused-arguments
+	
+来源[stackoverflow](http://stackoverflow.com/questions/21638444/error-command-cc-failed-with-exit-status-1-mysqldb-installation-on-mac)
 	
 修改完了运行命令
 
