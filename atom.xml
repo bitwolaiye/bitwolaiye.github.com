@@ -4,7 +4,7 @@
   <title><![CDATA[ZhouQi's Blog]]></title>
   <link href="http://bitwolaiye.github.io/atom.xml" rel="self"/>
   <link href="http://bitwolaiye.github.io/"/>
-  <updated>2015-09-08T12:47:15+08:00</updated>
+  <updated>2015-09-08T12:50:36+08:00</updated>
   <id>http://bitwolaiye.github.io/</id>
   <author>
     <name><![CDATA[周琪(zhouqi)]]></name>
@@ -12,38 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[初试Node.js]]></title>
-    <link href="http://bitwolaiye.github.io/blog/2014/02/20/try-nodejs-at-wechat/"/>
-    <updated>2014-02-20T14:29:48+08:00</updated>
-    <id>http://bitwolaiye.github.io/blog/2014/02/20/try-nodejs-at-wechat</id>
-    <content type="html"><![CDATA[<p>公司准备弄个微信服务号，于是几天前开始看了看微信服务号能干的事情。个人感觉，微信并没有给服务号提供什么神级api，仅仅是被动式的客服，也不知道为什么被各大科技博客吹上了天。干不了多少也得干，好吧，搜了下github，star最多的wechat的project都是node.js的，其次是php、python。前几天弄blockexplorer.com的时候被php伤了，一时半会不想碰，python的似乎也不太成熟。众多原因下，我鼓起勇气，node.js就node.js吧。</p>
-
-<h2>环境</h2>
-
-<p>mac下的环境是ok的，之前用rails的js模块就是node.js的。</p>
-
-<pre><code>brew install nodejs
-</code></pre>
-
-<p>IDE选择WebStorm，Jetbrains真是。。。唉，真心好公司。</p>
-
-<p>ubuntu 12.04下似乎默认apt-get安装的是旧版本</p>
-
-<pre><code>apt-get install python-software-properties
-apt-add-repository ppa:chris-lea/node.js
-apt-get update
-
-apt-get install nodejs
-apt-get install npm
-</code></pre>
-
-<p>上面的方法似乎没用，因为apt-get的源里的npm依赖旧版本的nodejs。</p>
-
-<p><a href="https://gist.github.com/dwayne/2983873">https://gist.github.com/dwayne/2983873</a></p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fibonacci in Python]]></title>
